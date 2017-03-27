@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310161315) do
+ActiveRecord::Schema.define(version: 20170327182051) do
 
   create_table "appearances", force: :cascade do |t|
     t.integer  "rating"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20170310161315) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.string   "occupation"
@@ -42,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170310161315) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "user_id"
+    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
 end
